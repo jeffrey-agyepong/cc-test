@@ -80,11 +80,11 @@ const headingGradientColor = block.heading.heading_gradient_color;
   </picture>
   <style define:vars={{ headingGradientColor }}>
     .hero-section{
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      width: 100%;
-      height: 100vh;
+      padding: clamp(12.5rem, 25.95vw, 18.75em) 1rem;
+    /* prevents the topper line from causing an overflow */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
     }
     .hero-container {
       width: 100%;
