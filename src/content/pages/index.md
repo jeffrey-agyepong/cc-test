@@ -112,5 +112,4 @@ content_blocks:
       image_path: /src/assets/images/featured-image-5.jpg
       alt_text: An image
     buttons: []
-    background_color: '#c8d5b9'
 ---
