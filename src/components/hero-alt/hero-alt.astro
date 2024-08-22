@@ -72,7 +72,12 @@ const headingGradientColor = block.heading.heading_gradient_color;
       </div>
     </div>
   </div>
-
+  <!-- Background Image -->
+  <picture class="cs-background">
+    <source media="(max-width: 600px)" srcset=${backgroundImageSrc}>
+    <source media="(min-width: 601px)" srcset=${backgroundImageSrc}>
+    <img loading="lazy" decoding="async" src=${backgroundImageSrc} alt="field" width="1920" height="1200" aria-hidden="true">
+  </picture>
   <style define:vars={{ headingGradientColor }}>
     .hero-section{
       background-size: cover;
@@ -90,6 +95,38 @@ const headingGradientColor = block.heading.heading_gradient_color;
       justify-content: flex-start;
       align-items: center;
     }
+    .cs-background {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+   .cs-background:before {
+    /* Overlay */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.48;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* prevents the cursor from interacting with it */
+    pointer-events: none;
+  }
+   .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 
     .content h1 {
       font-size: 2.5rem;
