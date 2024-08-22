@@ -4,7 +4,6 @@ spec:
     - buttons
   label: Primary Button
   description: Background color
-  icon: 'smart_button'
   tags:
     - Button
     - Background color
@@ -12,7 +11,6 @@ spec:
 # Defines the structure of this component, as well as the default values
 blueprint:
   button_text:
-  button_icon:
   button_link: ''
   background_color: ''
   hover_brightness: 0.85
