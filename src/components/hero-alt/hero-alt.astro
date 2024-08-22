@@ -4,7 +4,10 @@ import { Image } from "astro:assets";
 import Markdown from "../utility/markdown.astro";
 
 interface Props {
-  background_color: string;
+  background_image: {
+    image_path: string;
+    alt_text: string;
+  }
   heading: {
     heading_text: string;
     heading_gradient_color: string;
@@ -45,7 +48,7 @@ const imageSrc =
 const headingGradientColor = block.heading.heading_gradient_color;
 ---
 
-<section style={`background-color: ${block.background_color};`}>
+<section class="hero-section" style={`background-image: url('$backgroundImageSrc');`}>
   <div class="hero-container">
     <div class="content">
       <h1 class="heading">{block.heading.heading_text}</h1>
@@ -63,17 +66,16 @@ const headingGradientColor = block.heading.heading_gradient_color;
         }
       </div>
     </div>
-    <div class="blob">
-      <Image
-        alt={block.image.alt_text}
-        widths={[320, 500, 640]}
-        sizes={`(max-width: 640px) 320px, (max-width: 960px) 500px, (max-width: 1280px) 640px`}
-        src={imageSrc}
-      />
-    </div>
   </div>
 
   <style define:vars={{ headingGradientColor }}>
+    .hero-section{
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100vh;
+    }
     .hero-container {
       display: flex;
       flex-direction: column;
@@ -154,22 +156,6 @@ const headingGradientColor = block.heading.heading_gradient_color;
       font-size: 0.78em;
     }
 
-    .blob {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-    .blob > img {
-      max-width: 600px;
-      width: 100%;
-      background-size: cover;
-      -webkit-background-position: center;
-      background-position: center center;
-      margin: 20px;
-      animation: animate 10s ease-in-out infinite;
-      transition: all 1s ease-in-out;
-    }
-
     @media only screen and (min-width: 400px) {
       .buttons {
         flex-direction: row;
@@ -188,9 +174,6 @@ const headingGradientColor = block.heading.heading_gradient_color;
         width: 50%;
       }
 
-      .blob {
-        width: 50%;
-      }
       .buttons {
         flex-direction: column;
       }
@@ -200,7 +183,7 @@ const headingGradientColor = block.heading.heading_gradient_color;
         flex-direction: row;
       }
     }
-
+/* 
     @keyframes animate {
       0%,
       100% {
@@ -209,6 +192,6 @@ const headingGradientColor = block.heading.heading_gradient_color;
       50% {
         border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
       }
-    }
+    } */
   </style>
 </section>
