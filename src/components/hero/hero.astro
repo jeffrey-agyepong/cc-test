@@ -75,16 +75,13 @@ const headingGradientColor = block.heading.heading_gradient_color;
 
   <style define:vars={{ headingGradientColor }}>
     .hero-container {
+      width: 100%;
+      max-width: 80rem;
+      margin: auto;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      justify-content: flex-start;
       align-items: center;
-      padding-block: 24px;
-      padding-inline: var(--pagePadding);
-      max-width: var(--pageContainer);
-      margin-inline: auto;
-      overflow: hidden;
     }
 
     .content h1 {
