@@ -25,8 +25,7 @@ content_blocks:
         start creating your own components to use in the CloudCannon CMS.
       color: '#393939'
     image:
-      image_path: >-
-        https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/field.jpg
+      image_path: /src/assets/images/field.jpg
       alt_text: An image
     buttons:
       - _bookshop_name: buttons/primary
@@ -110,7 +109,7 @@ content_blocks:
         start creating your own components to use in the CloudCannon CMS.
       color: '#393939'
     image:
-      image_path: /src/assets/images/featured-image-5.jpg
+      image_path: /src/assets/images/field.jpg
       alt_text: An image
     buttons: []
 ---
