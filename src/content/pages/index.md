@@ -109,7 +109,7 @@ content_blocks:
         start creating your own components to use in the CloudCannon CMS.
       color: '#393939'
     image:
-      image_path: /src/assets/images/field.jpg
+      image_path:
       alt_text: An image
     buttons: []
 ---
