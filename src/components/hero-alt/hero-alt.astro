@@ -42,12 +42,14 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   { eager: true }
 );
 
-const backgroundImageSrc = 
-  images[block.background_image.image_path]?.default ?? block.background_image.image_path;
+// Extract image URLS from image metadeta
+const getImageUrl= (path: string) => {
+  const image = images[path];
+  return image ? image.default.src : path;
+};
 
-const imageSrc =
-  images[block.image.image_path]?.default ?? block.image.image_path;
-
+const backgroundImageSrc = getImageUrl(block.background_image.image_path);
+const imageSrc = getImageUrl(block.image.image_path);
 const headingGradientColor = block.heading.heading_gradient_color;
 ---
 
