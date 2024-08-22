@@ -59,6 +59,16 @@ _inputs:
       preview:
         text:
           - key: name
+  background_image:
+    options:
+      preview:
+        icon: 'image'
+        text:
+          - key: alt_text
+          - 'Background Image'
+        subtext:
+          - key: image_path
+          - 'Update background image'
   image:
     options:
       preview:
