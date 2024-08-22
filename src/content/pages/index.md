@@ -97,7 +97,7 @@ content_blocks:
       text_color: '#ffffff'
   - _bookshop_name: hero-alt
     background_image:
-      image_path: /src/assets/images/featured-image-5.jpg
+      image_path: /src/assets/images/5.jpg
       alt_text: An Image
     heading:
       heading_text: Astro Bookshop Starter
