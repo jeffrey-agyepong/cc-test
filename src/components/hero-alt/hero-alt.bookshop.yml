@@ -13,7 +13,9 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  background_color: '#ffffff'
+  background_image: 
+      image_path: 
+      alt_text: An Image
   heading:
     heading_text: Astro Bookshop Starter
     heading_gradient_color: '#a0a2ff'
